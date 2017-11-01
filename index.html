@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name='theme-color' content='#1569c7'>
+        <meta name='msapplication-navbutton-color' content='#1569c7'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='#1569c7'>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>  
+        <link href='favicon.png' rel='shortcut icon' type='image/png'>       
+        <script src="controller.js"></script>
+        <title>Droidie PC</title>
+    </head>
+    <body>
+        <!---->
+        <div id="black-cover" onclick="disposeMenus();"></div>
+        <div id="backup-loader">
+            <h1>Load backup</h1>
+            <div class="file-pickers">
+            Backup file: <input type="file" onchange='readText(this,false)' /> <br />
+            Breakpoints: <input type="file" onchange='readText(this,true)' /> <br />
+            </div>
+            <input type="button" id="submit-but" onclick="loadBackup();" value="Submit"/>
+        </div>
+
+       
+        <nav id="menu">
+            <div id="logo"><img src="images/logo.png"></div>       
+            <button class="menu-button" id="options-but" onclick="openOptionsMenu();">Options</button>
+            <button class="menu-button" id="save-entrie-but" onclick="saveEntry();" disabled="true">Save Entrie</button>
+            <button class="menu-button" id="new-entrie-but" onclick="editEntry(true);">New Entrie</button>
+        </nav>
+        <div id="wrapper">
+        <div id="entries-list">
+            <ul>
+                <li>Test</li>
+                <li>Ttest</li>
+            </ul>
+        </div>
+        <div id="entry-displayer">
+            
+        </div>
+        </div>
+    </body>
+</html>
