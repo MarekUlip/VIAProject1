@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif; }
+
+input, select, button {
+  border: 2px solid lightgrey;
+  border-radius: 3px; }
+
+button {
+  cursor: pointer;
+  background: #f57f17; }
+
+input:hover, input:focus, select:hover, select:focus, button:hover, button:focus {
+  border-color: #f57f17; }
+
+button:hover, button:focus {
+  border-color: brown; }
+
+#menu {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 8vh;
+  background: yellow;
+  top: 0;
+  left: 0; }
+  #menu #logo {
+    float: left;
+    display: block;
+    height: 8vh; }
+    #menu #logo img {
+      height: 100%; }
+  #menu select {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 8vh;
+    font-size: large;
+    margin: auto 0; }
+  #menu .menu-button {
+    display: block;
+    float: right;
+    width: 100px;
+    font-size: large;
+    margin: auto 0 auto 5px;
+    height: 8vh; }
+
+#wrapper {
+  display: block;
+  position: fixed;
+  top: 8vh;
+  left: 0; }
+
+#black-cover {
+  position: fixed;
+  display: none;
+  opacity: 0.7;
+  background: black;
+  width: 100%;
+  height: 100%;
+  z-index: 100; }
+
+#options-menu {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 8vh;
+  z-index: 101;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  background: #fff9c4; }
+  #options-menu button {
+    display: inline-block;
+    font-size: large;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px; }
+
+#backup-loader {
+  display: none;
+  margin: auto;
+  max-width: 500px;
+  height: 200px;
+  background: #fff9c4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 101; }
+  #backup-loader .file-pickers {
+    display: block;
+    text-align: right;
+    margin: 10px auto;
+    font-size: large; }
+    #backup-loader .file-pickers input {
+      font-size: large; }
+  #backup-loader h1 {
+    background: #f57f17;
+    margin-top: 0;
+    font-size: xx-large;
+    text-align: center; }
+  #backup-loader #submit-but {
+    margin: 5px auto;
+    min-width: 250px;
+    font-size: xx-large; }
+
+#entries-list {
+  width: 20vw;
+  min-width: 200px;
+  height: 91vh;
+  position: relative;
+  overflow-x: auto;
+  float: left;
+  display: block;
+  background: #f57f17; }
+  #entries-list ul {
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+  #entries-list li {
+    display: block;
+    width: 90%;
+    background: #fff9c4;
+    font-weight: bold;
+    font-size: x-large;
+    list-style: none;
+    border-radius: 5px;
+    margin: 5px auto;
+    text-align: center;
+    line-height: 50px; }
+  #entries-list li:hover {
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    transition: background 0.3s;
+    background: burlywood; }
+
+#entry-displayer {
+  background: lightyellow;
+  width: 70vw;
+  height: 91vh;
+  position: relative;
+  overflow-x: auto;
+  display: block; }
+  #entry-displayer #entry-controls {
+    background: gold;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    display: block;
+    text-align: center; }
+    #entry-displayer #entry-controls input {
+      height: 35px;
+      margin: 5px;
+      width: 250px;
+      font-size: large;
+      display: inline-block; }
+    #entry-displayer #entry-controls .entry-controls-buttons {
+      position: absolute;
+      display: block;
+      margin: 5px auto;
+      text-align: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%; }
+      #entry-displayer #entry-controls .entry-controls-buttons button {
+        width: 150px;
+        display: inline-block;
+        font-size: x-large; }
+    #entry-displayer #entry-controls select {
+      display: inline-block;
+      height: 35px;
+      margin: 5px;
+      width: 250px;
+      font-size: large; }
+  #entry-displayer #entry-content {
+    width: 99%;
+    display: block;
+    margin: 10px auto;
+    font-size: large; }
+  #entry-displayer #entry-text-area {
+    width: 99%;
+    min-height: 300px;
+    max-height: 600px;
+    margin: 0 auto;
+    display: none;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    font-size: large; }
+  #entry-displayer #entry-text-area:hover, #entry-displayer #entry-text-area:focus {
+    border-color: #f57f17; }
+
+/*# sourceMappingURL=stylesheet.css.map */

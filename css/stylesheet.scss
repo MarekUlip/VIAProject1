@@ -1,0 +1,259 @@
+$menu-height: 8vh;
+$content-height: 91vh;
+$background-color: #f57f17;
+$button-background-color: $background-color;
+$item-color: #FAD9B2;
+$entry-background-color: #fff9c4;
+$entry-hover-background-color: burlywood;
+$primary-color: yellow;
+$inactive-border-color: lightgrey;
+$active-border-color: $background-color;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input, select, button{
+    border: 2px solid $inactive-border-color;
+    border-radius: 3px;
+}
+
+button{
+    cursor: pointer;
+    background: $button-background-color;
+}
+
+input:hover, input:focus, select:hover, select:focus, button:hover, button:focus{
+    border-color: $active-border-color;
+}
+
+button:hover, button:focus{
+    border-color: brown;
+}
+
+#menu{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: $menu-height;
+    background: yellow;
+    top: 0;
+    left: 0;
+
+    #logo{
+        float: left;
+        display: block;
+        height: $menu-height;
+        img{
+            height: 100%;
+        }
+    }
+
+    select{
+        display: block;
+        float: left;
+        width: 150px;
+        height: $menu-height;
+        font-size: large;
+        margin: auto 0;
+    }
+
+
+    .menu-button{
+        display: block;
+        float: right;
+        width: 100px;
+        font-size: large;
+        margin: auto 0 auto 5px;
+        height: $menu-height;
+    }
+}
+#wrapper{
+    display: block;
+    position: fixed;
+    top: $menu-height;
+    left: 0;
+}
+
+#black-cover{
+    position: fixed;
+    display: none;
+    opacity: 0.7;
+    background: black;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+#options-menu{
+    display: none;
+    position: fixed;
+    right: 0;
+    top: $menu-height;
+    z-index: 101;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background: $entry-background-color;
+
+    button{
+        display: inline-block;
+        font-size: large;
+        width: 150px;
+        height: 50px;
+        margin-top: 10px; 
+    }
+}
+
+#backup-loader{
+    display: none;
+    margin: auto;
+    max-width: 500px;
+    height: 200px;
+    background: $entry-background-color;
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+    text-align: center;
+    z-index: 101;
+
+
+
+    .file-pickers{
+        display: block;
+        text-align: right;
+        margin: 10px auto;
+        font-size: large;
+
+        input{
+            font-size: large;
+        }
+    }
+
+    h1{
+        background: $background-color;
+        margin-top: 0;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    #submit-but{
+        margin: 5px auto;
+        min-width: 250px;
+        font-size: xx-large;
+    }
+}
+
+#entries-list{
+    width: 20vw;
+    min-width: 200px;
+    height: $content-height;
+    position: relative;
+    overflow-x: auto;
+    float: left;
+    display: block;
+    background: $background-color;
+
+    ul{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    li{
+        display: block;
+        width: 90%;
+        background: $entry-background-color;
+        font-weight: bold;
+        font-size: x-large;
+        list-style: none;
+        border-radius: 5px;
+        margin: 5px auto;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    li:hover{
+        cursor: pointer;
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s; 
+        background: $entry-hover-background-color;
+    }
+
+}
+
+#entry-displayer{
+    background: lightyellow;
+    width: 70vw;
+    height: $content-height;
+    position: relative;
+    overflow-x: auto;
+    display: block;
+
+    #entry-controls{
+        background: gold;
+        width: 100%;
+        height: 150px;
+        position: relative;
+        display: block;
+        text-align: center;
+
+        input{
+            height: 35px;
+            margin: 5px;
+            width: 250px;
+            font-size: large;
+            display: inline-block;
+        }
+
+        .entry-controls-buttons{
+            position: absolute;
+            display: block;
+            margin: 5px auto;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            
+            button{
+                width:150px;
+                display: inline-block;
+                font-size: x-large;
+            }
+        }
+
+        select{
+            display: inline-block;
+            height: 35px;
+            margin: 5px;
+            width: 250px;
+            font-size: large;
+        }
+    }
+
+    #entry-content{
+        width: 99%;
+        display: block;
+        margin: 10px auto;
+        font-size: large;
+    }
+
+    #entry-text-area{
+        width: 99%;
+        min-height: 300px;
+        max-height: 600px;
+        margin: 0 auto;
+        display: none;
+        border: 2px solid $inactive-border-color;
+        border-radius: 5px;
+        font-size: large;
+    }
+
+    #entry-text-area:hover, #entry-text-area:focus{
+        border-color: $active-border-color;
+    }
+}
+
