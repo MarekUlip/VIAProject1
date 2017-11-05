@@ -7,40 +7,59 @@
         <meta name='theme-color' content='#1569c7'>
         <meta name='msapplication-navbutton-color' content='#1569c7'>
         <meta name='apple-mobile-web-app-status-bar-style' content='#1569c7'>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>  
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/> 
+        <link rel="stylesheet" href="css/pikaday.css"> 
         <link href='favicon.png' rel='shortcut icon' type='image/png'>       
         <script src="controller.js"></script>
         <title>Droidie PC</title>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        </script>
+
+        <script src="pikaday.js"></script>
+        <script src="controller.js"></script>
+        
+    
     </head>
     <body>
         <!---->
         <div id="black-cover" onclick="disposeMenus();"></div>
-        <div id="backup-loader">
-            <h1>Load backup</h1>
-            <div class="file-pickers">
-            Backup file: <input type="file" onchange='readText(this,false)' /> <br />
-            Breakpoints: <input type="file" onchange='readText(this,true)' /> <br />
-            </div>
-            <input type="button" id="submit-but" onclick="loadBackup();" value="Submit"/>
-        </div>
-
-       
+        <div id="base-wrapper">
         <nav id="menu">
-            <div id="logo"><img src="images/logo.png"></div>       
-            <button class="menu-button" id="options-but" onclick="openOptionsMenu();">Options</button>
-            <button class="menu-button" id="save-entrie-but" onclick="saveEntry();" disabled="true">Save Entrie</button>
-            <button class="menu-button" id="new-entrie-but" onclick="editEntry(true);">New Entrie</button>
+            <div id="logo"><img src="images/logo.png"></div>
+            <button class="menu-button" id="main-menu-but" onclick="openMainMenu();">Menu</button>
         </nav>
-        <div id="wrapper">
-        <div id="entries-list">
+            <div id="content-wrapper">
+        <div id="main-menu-list">
             <ul>
-                <li>Test</li>
-                <li>Ttest</li>
+                <li onclick="openBitcoinTrend();">Bitcoin Trend</li>
+                <li onclick="openCurrentRate();">Current Rate</li>
+                <li onclick="openBitcoinConverter();">Bitcoin Converter</li>
             </ul>
         </div>
-        <div id="entry-displayer">
-            
+        <div id="main-content">
+            <div id="content">
+                <div id="bitcoin-trend">
+                <div id="controls">
+                        <input type="text" id="start-date">
+                        <input type="text" id="end-date">
+                        <select id="currency-selector"></select>
+                        <button value="Search" onclick="getBitcoinHistory();">Search</button>
+                </div>                
+                <div id="curve_chart"></div>
+                </div>
+                <div id="current-rate">
+                </div>
+                <div id="bitcoin-converter">
+                    <select id="converter-currency-selector"></select><input id="value-to-convert-input" placeholder="Value to convert" type="text"/>
+                    <button onclick="convertToBitcoin();">Convert to Bitcoin</button><button onclick="convertFromBitcoin();">Convert from bitcoin</button><br>
+                    <label id="converted-value-label">Converted value:</label>
+                </div>
+                
+            </div>
         </div>
+            </div>
         </div>
     </body>
 </html>

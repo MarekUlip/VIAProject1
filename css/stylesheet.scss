@@ -1,4 +1,4 @@
-$menu-height: 8vh;
+$menu-height: 50px;
 $content-height: 91vh;
 $background-color: #f57f17;
 $button-background-color: $background-color;
@@ -35,12 +35,9 @@ button:hover, button:focus{
 
 #menu{
     display: block;
-    position: fixed;
     width: 100%;
     height: $menu-height;
     background: yellow;
-    top: 0;
-    left: 0;
 
     #logo{
         float: left;
@@ -50,19 +47,8 @@ button:hover, button:focus{
             height: 100%;
         }
     }
-
-    select{
-        display: block;
-        float: left;
-        width: 150px;
-        height: $menu-height;
-        font-size: large;
-        margin: auto 0;
-    }
-
-
     .menu-button{
-        display: block;
+        display: none;
         float: right;
         width: 100px;
         font-size: large;
@@ -70,11 +56,14 @@ button:hover, button:focus{
         height: $menu-height;
     }
 }
-#wrapper{
-    display: block;
-    position: fixed;
-    top: $menu-height;
-    left: 0;
+#base-wrapper{
+    display: flex;
+    height: 100vh;
+    flex-flow: column;
+}
+
+#content-wrapper{
+    flex:1;
 }
 
 #black-cover{
@@ -87,73 +76,15 @@ button:hover, button:focus{
     z-index: 100;
 }
 
-#options-menu{
-    display: none;
-    position: fixed;
-    right: 0;
-    top: $menu-height;
-    z-index: 101;
-    text-align: center;
-    width: 200px;
-    height: 200px;
-    background: $entry-background-color;
-
-    button{
-        display: inline-block;
-        font-size: large;
-        width: 150px;
-        height: 50px;
-        margin-top: 10px; 
-    }
-}
-
-#backup-loader{
-    display: none;
-    margin: auto;
-    max-width: 500px;
-    height: 200px;
-    background: $entry-background-color;
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0;
-    text-align: center;
-    z-index: 101;
-
-
-
-    .file-pickers{
-        display: block;
-        text-align: right;
-        margin: 10px auto;
-        font-size: large;
-
-        input{
-            font-size: large;
-        }
-    }
-
-    h1{
-        background: $background-color;
-        margin-top: 0;
-        font-size: xx-large;
-        text-align: center;
-    }
-
-    #submit-but{
-        margin: 5px auto;
-        min-width: 250px;
-        font-size: xx-large;
-    }
-}
-
-#entries-list{
-    width: 20vw;
+#main-menu-list{
+    width: 20%;
     min-width: 200px;
-    height: $content-height;
-    position: relative;
+    height: 100%;
     overflow-x: auto;
     float: left;
     display: block;
     background: $background-color;
+    z-index: 100;
 
     ul{
         width: 100%;
@@ -184,18 +115,16 @@ button:hover, button:focus{
 
 }
 
-#entry-displayer{
+#main-content{
     background: lightyellow;
-    width: 70vw;
-    height: $content-height;
-    position: relative;
+    width: 80%;
+    height: 100%;
     overflow-x: auto;
-    display: block;
+    display: flex;
+    float: left;
 
-    #entry-controls{
-        background: gold;
+    #controls{
         width: 100%;
-        height: 150px;
         position: relative;
         display: block;
         text-align: center;
@@ -208,7 +137,7 @@ button:hover, button:focus{
             display: inline-block;
         }
 
-        .entry-controls-buttons{
+        .controls-buttons{
             position: absolute;
             display: block;
             margin: 5px auto;
@@ -234,14 +163,23 @@ button:hover, button:focus{
         }
     }
 
-    #entry-content{
-        width: 99%;
+    #content{
+        width: 90%;
+        height: 90%;
         display: block;
-        margin: 10px auto;
+        margin: auto;
         font-size: large;
+
+        #curve_chart{
+            width: 95%;
+            height: 500px;
+            margin: 0 auto;
+            display: block;
+            background: white;
+        }
     }
 
-    #entry-text-area{
+    #text-area{
         width: 99%;
         min-height: 300px;
         max-height: 600px;
@@ -252,8 +190,31 @@ button:hover, button:focus{
         font-size: large;
     }
 
-    #entry-text-area:hover, #entry-text-area:focus{
+    #text-area:hover, #text-area:focus{
         border-color: $active-border-color;
+    }
+}
+
+@media screen and (max-width: 1001px) {
+    #main-menu-list{
+        width: 50%;
+        position: fixed;
+        top: $menu-height;
+        right: 0;
+        display: none;
+    }
+    #main-content{
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        display: flex;
+        float: left;
+    }
+
+    #menu{
+        .menu-button{
+            display: block;
+        }
     }
 }
 
