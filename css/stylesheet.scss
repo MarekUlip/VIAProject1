@@ -20,6 +20,39 @@ input, select, button{
     border-radius: 3px;
 }
 
+input{
+    height: 35px;
+    margin: 5px;
+    width: 250px;
+    font-size: large;
+    display: inline-block;
+}
+    
+button{
+    width:150px;
+    display: inline-block;
+    font-size: x-large;
+}
+
+select{
+    display: inline-block;
+    height: 35px;
+    margin: 5px;
+    width: 250px;
+    font-size: large;
+}
+
+#current-rate{
+
+    table,th,td{
+        border:2px solid $background-color;
+    }
+
+    table{
+        border-collapse: collapse;
+    }
+}
+
 button{
     cursor: pointer;
     background: $button-background-color;
@@ -64,16 +97,6 @@ button:hover, button:focus{
 
 #content-wrapper{
     flex:1;
-}
-
-#black-cover{
-    position: fixed;
-    display: none;
-    opacity: 0.7;
-    background: black;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
 }
 
 #main-menu-list{
@@ -136,22 +159,11 @@ button:hover, button:focus{
             font-size: large;
             display: inline-block;
         }
-
-        .controls-buttons{
-            position: absolute;
-            display: block;
-            margin: 5px auto;
-            text-align: center;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
             
-            button{
-                width:150px;
-                display: inline-block;
-                font-size: x-large;
-            }
+        button{
+            width:150px;
+            display: inline-block;
+            font-size: x-large;
         }
 
         select{
@@ -178,22 +190,22 @@ button:hover, button:focus{
             background: white;
         }
     }
+}
 
-    #text-area{
-        width: 99%;
-        min-height: 300px;
-        max-height: 600px;
-        margin: 0 auto;
-        display: none;
-        border: 2px solid $inactive-border-color;
+#message-container{
+    position: fixed;
+    top: $menu-height;
+    right: 10px;
+
+    .message{
+        width: 300px;
+        border: 2px solid $background-color;
+        background: $item-color;
         border-radius: 5px;
-        font-size: large;
-    }
-
-    #text-area:hover, #text-area:focus{
-        border-color: $active-border-color;
     }
 }
+
+
 
 @media screen and (max-width: 1001px) {
     #main-menu-list{
